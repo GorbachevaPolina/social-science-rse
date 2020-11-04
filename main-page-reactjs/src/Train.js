@@ -4,8 +4,9 @@ import ThemesItems from './Themes/ThemesItems'
 
 const style = {
     div: {
-        //background: 'white',
-        borderRadius: '16px'
+        background: 'white',
+        borderRadius: '16px',
+        margin: 'auto'
     }
 }
 

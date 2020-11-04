@@ -30,7 +30,7 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-column-gap: 10%;
-    margin: 50px;
+    margin: 5%;
 }
 
 .train {
