@@ -8,12 +8,26 @@
 <body>
     <script type="text/javascript">
         function showThemes() {
-            document.getElementById("trains").className = "themes-and-button-active"; 
+            document.getElementById("themes").className = "themes-and-button-active"; 
         }
+
+        function chooseAllThemes() {
+            let elems = document.querySelectorAll('.point');
+            for (let elem of elems) {
+                elem.className = "point-active";
+            }
+        }
+        function chooseNoneOfThemes() {
+            let elems = document.querySelectorAll('.point-active');
+            for (let elem of elems) {
+                elem.className = "point";
+            }
+        }
+
     </script>
 
     <div class="header">
-        <img src="">
+        <img src="" style="width: 40px;">
         <span class="name">Our Project</span>
     </div>
     
@@ -37,7 +51,7 @@
             </div>
         </div>
 
-        <div id="trains" class="themes-and-button">
+        <div id="themes" class="themes-and-button">
             <div class="point-and-theme">
                 <button class="point" onclick="this.className = (this.className == 'point' ? 'point-active' : 'point')">
                 </button>
@@ -68,6 +82,15 @@
                 </button>
                 <span class="theme">Тема6</span>
             </div>
+            <div style="display: flex; justify-content: center;">
+                <button class="choose-button" onclick="chooseAllThemes()"> 
+                    <span>Выбрать все</span>
+                </button>
+                <button class="choose-button" onclick="chooseNoneOfThemes()"> 
+                    <span>Снять выделение</span>
+                </button>
+            </div>
+            
 
             <button class="button-go">
                 <span class="button-go-text">Вперед</span>
