@@ -6,9 +6,6 @@ body {
 
 }
 
-.page-content {
-    padding: 20px 170px;
-}
 
 .header {
     background: #5ebde5;
@@ -25,7 +22,7 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-column-gap: 10%;
-    margin: 50px 0;
+    margin: 5%;
 }
 
 .train {
