@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>main page</title>
+    <link rel="stylesheet" href="main-page.css">
+
+</head>
+<body>
+    <script type="text/javascript">
+        function showThemes() {
+            document.getElementById("themes").className = "themes-and-button-active"; 
+        }
+
+        function chooseAllThemes() {
+            let elems = document.querySelectorAll('.point');
+            for (let elem of elems) {
+                elem.className = "point-active";
+            }
+        }
+        function chooseNoneOfThemes() {
+            let elems = document.querySelectorAll('.point-active');
+            for (let elem of elems) {
+                elem.className = "point";
+            }
+        }
+
+    </script>
+
+    <div class="header">
+        <img src="" style="width: 40px;">
+        <span class="name">Our Project</span>
+    </div>
+    
+    <div class="page-content">
+        
+        <div class="trains">
+            <div style="background: white; border-radius: 16px;">
+                <button onclick="showThemes()" class="train image1">
+                    <span class="name-of-train">Вставь слово</span>
+                </button>
+            </div>
+            <div style="background: white; border-radius: 16px;">
+                <button onclick="showThemes()" class="train image2">
+                    <span class="name-of-train">Выбери правильный вариант</span>
+                </button>
+            </div>
+            <div style="background: white; border-radius: 16px;">
+                <button onclick="showThemes()" class="train image3">
+                    <span class="name-of-train">Верю-не верю</span>
+                </button>
+            </div>
+        </div>
+
+        <div id="themes" class="themes-and-button">
+            <div class="point-and-theme">
+                <button class="point" onclick="this.className = (this.className == 'point' ? 'point-active' : 'point')">
+                </button>
+                <span class="theme">Тема1</span>
+            </div>
+            <div class="point-and-theme">
+                <button class="point" onclick="this.className = (this.className == 'point' ? 'point-active' : 'point')">
+                </button>
+                <span class="theme">Тема2</span>
+            </div>
+            <div class="point-and-theme">
+                <button class="point" onclick="this.className = (this.className == 'point' ? 'point-active' : 'point')">
+                </button>
+                <span class="theme">Тема3</span>
+            </div>
+            <div class="point-and-theme">
+                <button class="point" onclick="this.className = (this.className == 'point' ? 'point-active' : 'point')">
+                </button>
+                <span class="theme">Тема4</span>
+            </div>
+            <div class="point-and-theme">
+                <button class="point" onclick="this.className = (this.className == 'point' ? 'point-active' : 'point')">
+                </button>
+                <span class="theme">Тема5</span>
+            </div>
+            <div class="point-and-theme">
+                <button class="point" onclick="this.className = (this.className == 'point' ? 'point-active' : 'point')">
+                </button>
+                <span class="theme">Тема6</span>
+            </div>
+            <div style="display: flex; justify-content: center;">
+                <button class="choose-button" onclick="chooseAllThemes()"> 
+                    <span>Выбрать все</span>
+                </button>
+                <button class="choose-button" onclick="chooseNoneOfThemes()"> 
+                    <span>Снять выделение</span>
+                </button>
+            </div>
+            
+
+            <button class="button-go">
+                <span class="button-go-text">Вперед</span>
+            </button>
+        </div>
+
+        
+    </div> 
+    
+
+
+</body>
+</html>
