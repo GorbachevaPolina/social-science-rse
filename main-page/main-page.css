@@ -147,4 +147,16 @@ body {
     font-size: 24px;
 }
 
+.choose-button {
+    padding: 10px;
+    background: #84c5e0;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    margin: 10px;
 
+}
+
+.choose-button:focus {
+    outline: none;
+}
