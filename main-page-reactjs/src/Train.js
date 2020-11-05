@@ -10,15 +10,6 @@ const style = {
     }
 }
 
-const themes = [
-        {id: 1, checked: false, title: 'Тема'},
-        {id: 2, checked: false, title: 'Тема'},
-        {id: 3, checked: false, title: 'Тема'},
-        {id: 4, checked: false, title: 'Тема'},
-        {id: 5, checked: false, title: 'Тема'},
-        {id: 6, checked: false, title: 'Тема'}
-    ];
-
 class Train extends React.Component{
     constructor(props){
         super(props);
@@ -50,7 +41,7 @@ class Train extends React.Component{
                     </button>
                 </div>
             </div>
-            {this.state.isDisplayed ? <Themes themes={themes} key={themes.id}/> : null}
+            {this.state.isDisplayed ? <Themes /> : null}
             </div>
         );
     }
