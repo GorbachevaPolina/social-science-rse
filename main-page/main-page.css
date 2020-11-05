@@ -6,9 +6,6 @@ body {
 
 }
 
-.page-content {
-    padding: 20px 170px;
-}
 
 .header {
     background: #5ebde5;
@@ -25,7 +22,7 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-column-gap: 10%;
-    margin: 50px 0;
+    margin: 5%;
 }
 
 .train {
@@ -154,9 +151,15 @@ body {
     border-radius: 10px;
     color: white;
     margin: 10px;
+<<<<<<< HEAD
 
 }
 
+=======
+
+}
+
+>>>>>>> 848ed0b42fd93c25b7c2c8e38bd23ad3813e8ef0
 .choose-button:focus {
     outline: none;
 }

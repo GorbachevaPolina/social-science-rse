@@ -30,7 +30,7 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-column-gap: 10%;
-    margin: 50px;
+    margin: 5%;
 }
 
 .train {
@@ -132,3 +132,36 @@ body {
     font-size: 24px;
 }
 
+.choose-button {
+    padding: 10px;
+    background: #84c5e0;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    margin: 10px;
+
+}
+
+.choose-button:focus {
+    outline: none;
+}
+
+.button-go-text {
+    color: white;
+    font-size: 24px;
+}
+
+.choose-buttons {
+    display: flex; 
+    justify-content: center;
+}
+
+.theme {
+    margin: 10px;
+    font-size: 24px;
+    color: gray;
+}
+
+.themes-and-buttons {
+    display: grid;
+}

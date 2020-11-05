@@ -1,28 +1,25 @@
 import React from 'react'
 
 const styles = {
-    /*li: {
-        display: 'flex',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        padding: '.5rem 1rem'
-    },*/
-
     input: {
-        marginRight: '1rem'
+        //margin: 'auto'
     }
 }
 
-function ThemesItems({themes, index}) {
+function ThemesItems({label, isSelected, onCheckboxChange}) {
     return (
-    <li className='point-and-theme'>
-        <span className='theme'>
-            <input type='checkbox' style={styles.input}/>
-            <strong>{index + 1}</strong>
-            &nbsp;
-            {themes.title}
-        </span>
-    </li>
+        <div className='point-and-theme'>
+            <label>
+                <input
+                    type='checkbox'
+                    name={label}
+                    checked={isSelected}
+                    onChange={onCheckboxChange}
+                    style={styles.input}
+                />
+                <span className="theme">{label}</span>
+            </label>
+        </div>
     )
 }
 
