@@ -1,5 +1,6 @@
 import React from 'react'
 import ThemesItems from './ThemesItems'
+import ReactDOM from 'react-dom';
 
 const themes = [
     "Тема1", 
@@ -10,6 +11,7 @@ const themes = [
     "Тема6",
     "Тема7",
 ];
+
 
 class Themes extends React.Component {
     
@@ -63,6 +65,14 @@ class Themes extends React.Component {
     );
 
     createCheckboxes = () => themes.map(this.createCheckbox);
+    
+    hello = () => {
+        const element = (
+            <div>
+                <h1>Hello, world!</h1>
+            </div>);
+        ReactDOM.render(element, document.getElementById('root'));
+    }
 
     render() { 
         return(
@@ -86,7 +96,7 @@ class Themes extends React.Component {
                             Отменить
                         </button>
                     </div>
-                        <button type="submit" className="button-go">
+                        <button type="submit" onClick={this.hello} className="button-go">
                             <span className="button-go-text">Вперед</span>
                         </button>
                     

@@ -1,16 +1,13 @@
 import React from 'react'
-import Header from './Header'
-import Themes from './Themes/Themes'
-import Train from './Train'
-import ThemesItems from './Themes/ThemesItems'
+//import Header from './Header'
+//import Themes from './MainPage/Themes/Themes'
+import Train from './MainPage/Themes/Train'
+//import ThemesItems from './MainPage/Themes/ThemesItems'
 
 function App() {
-
-  
-
   return (
     <div className='body'>
-      <Header/>
+      {/*<Header/>*/}
       <div className='page-content'>
         <Train />
       </div>
