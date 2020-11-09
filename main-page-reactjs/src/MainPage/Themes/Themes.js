@@ -1,6 +1,7 @@
 import React from 'react'
 import ThemesItems from './ThemesItems'
 import ReactDOM from 'react-dom';
+import SecondQuiz from '../../Quiz2/SecondQuiz'
 
 const themes = [
     "Тема1", 
@@ -67,11 +68,8 @@ class Themes extends React.Component {
     createCheckboxes = () => themes.map(this.createCheckbox);
     
     hello = () => {
-        const element = (
-            <div>
-                <h1>Hello, world!</h1>
-            </div>);
-        ReactDOM.render(element, document.getElementById('root'));
+       // const element = (<secondQuiz />);
+        ReactDOM.render(<SecondQuiz />, document.getElementById('root'));
     }
 
     render() { 
