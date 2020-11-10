@@ -110,9 +110,9 @@ body {
 .button-go {
     width: auto;
     background: #5ebde5;
-    padding: 20px;
+    padding: 12px;
     border: none;
-    border-radius: 20px;
+    border-radius: 12px;
     box-shadow: 0 0 50px white;
     display: grid;
     margin: auto;
@@ -164,4 +164,29 @@ body {
 
 .themes-and-buttons {
     display: grid;
+}
+
+.quiz-card {
+    margin: 10% auto;
+    width: fit-content;
+    padding: 20px;
+    box-shadow: 0 0 10px rgb(48, 117, 134);
+    background: #fafeff;
+    border-radius: 10%;
+    width: 20%;
+}
+
+.quiz-text {
+    font-size: 22px;
+    color: rgb(20, 100, 114);
+    margin: 10px 0;
+}
+
+.quiz-input-choose {
+    margin: auto;
+
+}
+
+.quiz-text:first-child {
+    font-weight: 600;
 }

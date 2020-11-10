@@ -3,8 +3,8 @@ import React from 'react'
 function Answer({isCorrect, answer}) {
 
     if(isCorrect) 
-        return (<div>Молодец!!!!</div>);
-    else return (<div>Неправильно. Правильный ответ: {answer}</div>);
+        return (<div className="quiz-text">Молодец!!!!</div>);
+    else return (<div className="quiz-text">Неправильно. Правильный ответ: {answer}</div>);
 }
 
 export default Answer

@@ -77,29 +77,32 @@ class SecondQuiz extends React.Component {
     
     render() {
         return( 
-            <div>
+            <div className="quiz-card">
                 <div className="question">
-                    {arrayOfQuestions[currentQuestion].questionText}
+                <span className="quiz-text">{arrayOfQuestions[currentQuestion].questionText}</span>
                 </div>
                 <div className="answers"> 
-                    <label>
+                    <label className="quiz-input-choose">
                         <input type="radio" onClick={() => this.setOption(arrayOfQuestions[currentQuestion].answerOptions[0].isCorrect)} name="x"/>
-                        {arrayOfQuestions[currentQuestion].answerOptions[0].answerText}
-                    </label>
-                    <label>
+                        <span className="quiz-text">{arrayOfQuestions[currentQuestion].answerOptions[0].answerText}</span>
+                    </label> <br />
+                    <label className="quiz-input-choose">
                         <input type="radio" onClick={() => this.setOption(arrayOfQuestions[currentQuestion].answerOptions[1].isCorrect)} name="x"/>
-                        {arrayOfQuestions[currentQuestion].answerOptions[1].answerText}
-                    </label>
-                    <label>
+                        <span className="quiz-text">{arrayOfQuestions[currentQuestion].answerOptions[1].answerText}</span>
+                    </label> <br />
+                    <label className="quiz-input-choose">
                         <input type="radio" onClick={() => this.setOption(arrayOfQuestions[currentQuestion].answerOptions[2].isCorrect)} name="x"/>
-                        {arrayOfQuestions[currentQuestion].answerOptions[2].answerText}
-                    </label>
-                    <label>
+                        <span className="quiz-text">{arrayOfQuestions[currentQuestion].answerOptions[2].answerText}</span>
+                    </label> <br />
+                    <label className="quiz-input-choose">
                         <input type="radio" onClick={() => this.setOption(arrayOfQuestions[currentQuestion].answerOptions[3].isCorrect)} name="x"/>
-                        {arrayOfQuestions[currentQuestion].answerOptions[3].answerText}
-                    </label>
-                    <button onClick={() => this.findCorrectAnswer()}>Результат</button>
-                    <button onClick={() => this.handleAnswerOption(_isCorrect)}>Далее</button>
+                        <span className="quiz-text">{arrayOfQuestions[currentQuestion].answerOptions[3].answerText}</span>
+                    </label> <br />
+                    <div>
+                        <button onClick={() => this.findCorrectAnswer()} className="choose-button">Результат</button>
+                        <button onClick={() => this.handleAnswerOption(_isCorrect)} className="choose-button">Далее</button>
+                    </div>
+                    
                     {isCorrectAnswerDisplayed ? <Answer isCorrect={_isCorrect} answer={rightAnswer} /> : null}
                     {isCorrectAnswerDisplayed = false}
                 </div>
