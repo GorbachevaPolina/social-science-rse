@@ -169,10 +169,10 @@ body {
 .quiz-card {
     margin: 10% auto;
     width: fit-content;
-    padding: 20px;
+    padding: 28px;
     box-shadow: 0 0 10px rgb(48, 117, 134);
     background: #fafeff;
-    border-radius: 10%;
+    /* border-radius: 32px; */
     width: 20%;
 }
 
@@ -180,11 +180,6 @@ body {
     font-size: 22px;
     color: rgb(20, 100, 114);
     margin: 10px 0;
-}
-
-.quiz-input-choose {
-    margin: auto;
-
 }
 
 .quiz-text:first-child {

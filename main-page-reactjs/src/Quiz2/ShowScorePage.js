@@ -10,9 +10,9 @@ class ShowScorePage extends React.Component {
     
     render() {
         return(
-            <div>
-                <p>{score} из 4</p>
-                <button onClick={() => this.goOnMainPage()}>На главную страницу</button>
+            <div className="quiz-card">
+                <p  className="quiz-text">{score} из 4</p>
+                <button onClick={() => this.goOnMainPage()} className="choose-button">На главную страницу</button>
             </div>
         )
     }

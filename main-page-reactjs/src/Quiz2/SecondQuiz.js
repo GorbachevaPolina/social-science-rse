@@ -60,6 +60,7 @@ class SecondQuiz extends React.Component {
             currentQuestion = nextQuestion;
         } else {
             showScore = true;
+            currentQuestion =0;
             ReactDOM.render(<ShowScorePage score={score}/>, document.getElementById('root'));
         }
         this.forceUpdate();
@@ -85,19 +86,19 @@ class SecondQuiz extends React.Component {
                 <span className="quiz-text">{arrayOfQuestions[currentQuestion].questionText}</span>
                 </div>
                 <div className="answers"> 
-                    <label className="quiz-input-choose">
+                    <label>
                         <input type="radio" onClick={() => this.setOption(arrayOfQuestions[currentQuestion].answerOptions[0].isCorrect)} name="x"/>
                         <span className="quiz-text">{arrayOfQuestions[currentQuestion].answerOptions[0].answerText}</span>
                     </label> <br />
-                    <label className="quiz-input-choose">
+                    <label>
                         <input type="radio" onClick={() => this.setOption(arrayOfQuestions[currentQuestion].answerOptions[1].isCorrect)} name="x"/>
                         <span className="quiz-text">{arrayOfQuestions[currentQuestion].answerOptions[1].answerText}</span>
                     </label> <br />
-                    <label className="quiz-input-choose">
+                    <label>
                         <input type="radio" onClick={() => this.setOption(arrayOfQuestions[currentQuestion].answerOptions[2].isCorrect)} name="x"/>
                         <span className="quiz-text">{arrayOfQuestions[currentQuestion].answerOptions[2].answerText}</span>
                     </label> <br />
-                    <label className="quiz-input-choose">
+                    <label>
                         <input type="radio" onClick={() => this.setOption(arrayOfQuestions[currentQuestion].answerOptions[3].isCorrect)} name="x"/>
                         <span className="quiz-text">{arrayOfQuestions[currentQuestion].answerOptions[3].answerText}</span>
                     </label> <br />
