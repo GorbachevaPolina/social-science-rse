@@ -61,6 +61,9 @@ class SecondQuiz extends React.Component {
         } else {
             showScore = true;
             currentQuestion =0;
+            score = 0;
+            _isCorrect = false;
+            isCorrectAnswerDisplayed = false;
             ReactDOM.render(<ShowScorePage score={score}/>, document.getElementById('root'));
         }
         this.forceUpdate();
