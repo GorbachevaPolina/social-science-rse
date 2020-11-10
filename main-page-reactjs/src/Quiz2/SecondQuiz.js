@@ -1,5 +1,7 @@
 import React from 'react'
 import Answer from './Answer'
+import ReactDOM from 'react-dom'
+import ShowScorePage from './ShowScorePage'
 
 const arrayOfQuestions = [
     {
@@ -58,6 +60,7 @@ class SecondQuiz extends React.Component {
             currentQuestion = nextQuestion;
         } else {
             showScore = true;
+            ReactDOM.render(<ShowScorePage score={score}/>, document.getElementById('root'));
         }
         this.forceUpdate();
     }
@@ -114,3 +117,4 @@ class SecondQuiz extends React.Component {
 }
 
 export default SecondQuiz;
+export {score}

@@ -1,7 +1,8 @@
 import React from 'react'
 import ThemesItems from './ThemesItems'
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom'
 import SecondQuiz from '../../Quiz2/SecondQuiz'
+import { id } from './Train'
 
 const themes = [
     "Тема1", 
@@ -54,7 +55,9 @@ class Themes extends React.Component {
     handleFormSubmit = formSubmitEvent => {
         formSubmitEvent.preventDefault();
         Object.keys(this.state.checkboxes).filter(checkbox => this.state.checkboxes[checkbox]).forEach(checkbox => {console.log(checkbox, "is selected.");});
-        ReactDOM.render(<SecondQuiz />, document.getElementById('root'));
+        if(id == 2) {
+            ReactDOM.render(<SecondQuiz />, document.getElementById('root'));
+        }
     };
 
     createCheckbox = option => (

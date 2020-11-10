@@ -52,3 +52,4 @@ class Train extends React.Component{
     }
 }
 export default Train;
+export { id };
