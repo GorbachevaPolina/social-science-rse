@@ -54,6 +54,7 @@ class Themes extends React.Component {
     handleFormSubmit = formSubmitEvent => {
         formSubmitEvent.preventDefault();
         Object.keys(this.state.checkboxes).filter(checkbox => this.state.checkboxes[checkbox]).forEach(checkbox => {console.log(checkbox, "is selected.");});
+        ReactDOM.render(<SecondQuiz />, document.getElementById('root'));
     };
 
     createCheckbox = option => (
@@ -67,10 +68,10 @@ class Themes extends React.Component {
 
     createCheckboxes = () => themes.map(this.createCheckbox);
     
-    hello = () => {
+    /* hello = () => {
        // const element = (<secondQuiz />);
         ReactDOM.render(<SecondQuiz />, document.getElementById('root'));
-    }
+    }*/
 
     render() { 
         return(
@@ -94,7 +95,7 @@ class Themes extends React.Component {
                             Отменить
                         </button>
                     </div>
-                        <button type="submit" onClick={this.hello} className="button-go">
+                        <button type="submit"  className="button-go">
                             <span className="button-go-text">Вперед</span>
                         </button>
                     
