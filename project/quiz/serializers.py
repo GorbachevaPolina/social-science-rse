@@ -6,7 +6,7 @@ class SecondQuizSerializer(serializers.ModelSerializer):
         model = Secquiz
         fields = ('questionText', 'option1', 'option2', 'option3', 'option4', 'answerText',)
 
-class ThemesSerializer(serializers.ModelSerializer):
+class ThemesSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Theme
         fields = ("theme", 'isChosen')
