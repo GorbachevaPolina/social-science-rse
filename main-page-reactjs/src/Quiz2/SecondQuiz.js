@@ -6,78 +6,63 @@ import ShowScorePage from './ShowScorePage'
 const arrayOfQuestions = [
     {
         questionText: 'What is the capital of France?',
-        answerOptions: [
-            { answerText: 'New York', isCorrect: false },
-            { answerText: 'London', isCorrect: false },
-            { answerText: 'Paris', isCorrect: true },
-            { answerText: 'Dublin', isCorrect: false },
-        ],
+        answer1: 'New York',
+        answer2: 'London',
+        answer3: 'Paris',
+        answer4: 'Dublin',
+        correctAnswer: 'Paris'
     },
     {
         questionText: 'Who is CEO of Tesla?',
-        answerOptions: [
-            { answerText: 'Jeff Bezos', isCorrect: false },
-            { answerText: 'Elon Musk', isCorrect: true },
-            { answerText: 'Bill Gates', isCorrect: false },
-            { answerText: 'Tony Stark', isCorrect: false },
-        ],
+        answer1: 'Jeff Bezos',
+        answer2: 'Elon Musk',
+        answer3: 'Bill Gates',
+        answer4: 'Tony Stark',
+        correctAnswer: 'Elon Musk'
     },
     {
         questionText: 'The iPhone was created by which company?',
-        answerOptions: [
-            { answerText: 'Apple', isCorrect: true },
-            { answerText: 'Intel', isCorrect: false },
-            { answerText: 'Amazon', isCorrect: false },
-            { answerText: 'Microsoft', isCorrect: false },
-        ],
+        answer1: 'Apple',
+        answer2: 'Intel',
+        answer3: 'Amazon',
+        answer4: 'Microsoft',
+        correctAnswer: "Apple",
     },
     {
         questionText: 'How many Harry Potter books are there?',
-        answerOptions: [
-            { answerText: '1', isCorrect: false },
-            { answerText: '4', isCorrect: false },
-            { answerText: '6', isCorrect: false },
-            { answerText: '7', isCorrect: true },
-        ],
+        answer1: '1',
+        answer2: '4',
+        answer3: '6',
+        answer4: '7',
+        correctAnswer: "7",
     },
 ];
 
-var _isCorrect= false;
+var _chosenAnswer= '';
 var currentQuestion = 0;
-var showScore = false;
 var score = 0;
-var rightAnswer = '';
 var isCorrectAnswerDisplayed = false;
 
 
 class SecondQuiz extends React.Component {
-    handleAnswerOption(isCorrect) {
-        if (isCorrect) {
+    handleAnswerOption(chosenAnswer) {
+        if (chosenAnswer == arrayOfQuestions[currentQuestion].correctAnswer) {
             score += 1;
         }
         var nextQuestion = currentQuestion + 1; 
         if (nextQuestion < arrayOfQuestions.length) {
             currentQuestion = nextQuestion;
         } else {
-            showScore = true;
-            currentQuestion =0;
-            score = 0;
-            _isCorrect = false;
-            isCorrectAnswerDisplayed = false;
             ReactDOM.render(<ShowScorePage score={score}/>, document.getElementById('root'));
         }
         this.forceUpdate();
     }
 
     setOption(answerOption) {
-        _isCorrect = answerOption;
+        _chosenAnswer = answerOption;
     }
 
     findCorrectAnswer() {
-        for(var i = 0; i < 4; i++) 
-            if(arrayOfQuestions[currentQuestion].answerOptions[i].isCorrect) 
-                rightAnswer = arrayOfQuestions[currentQuestion].answerOptions[i].answerText;
-
         isCorrectAnswerDisplayed = true;
         this.forceUpdate();
     }
@@ -90,27 +75,27 @@ class SecondQuiz extends React.Component {
                 </div>
                 <div className="answers"> 
                     <label>
-                        <input type="radio" onClick={() => this.setOption(arrayOfQuestions[currentQuestion].answerOptions[0].isCorrect)} name="x"/>
-                        <span className="quiz-text">{arrayOfQuestions[currentQuestion].answerOptions[0].answerText}</span>
+                        <input type="radio" onClick={() => this.setOption(arrayOfQuestions[currentQuestion].answer1)} name="x"/>
+                        <span className="quiz-text">{arrayOfQuestions[currentQuestion].answer1}</span>
                     </label> <br />
                     <label>
-                        <input type="radio" onClick={() => this.setOption(arrayOfQuestions[currentQuestion].answerOptions[1].isCorrect)} name="x"/>
-                        <span className="quiz-text">{arrayOfQuestions[currentQuestion].answerOptions[1].answerText}</span>
+                        <input type="radio" onClick={() => this.setOption(arrayOfQuestions[currentQuestion].answer2)} name="x"/>
+                        <span className="quiz-text">{arrayOfQuestions[currentQuestion].answer2}</span>
                     </label> <br />
                     <label>
-                        <input type="radio" onClick={() => this.setOption(arrayOfQuestions[currentQuestion].answerOptions[2].isCorrect)} name="x"/>
-                        <span className="quiz-text">{arrayOfQuestions[currentQuestion].answerOptions[2].answerText}</span>
+                        <input type="radio" onClick={() => this.setOption(arrayOfQuestions[currentQuestion].answer3)} name="x"/>
+                        <span className="quiz-text">{arrayOfQuestions[currentQuestion].answer3}</span>
                     </label> <br />
                     <label>
-                        <input type="radio" onClick={() => this.setOption(arrayOfQuestions[currentQuestion].answerOptions[3].isCorrect)} name="x"/>
-                        <span className="quiz-text">{arrayOfQuestions[currentQuestion].answerOptions[3].answerText}</span>
+                        <input type="radio" onClick={() => this.setOption(arrayOfQuestions[currentQuestion].answer4)} name="x"/>
+                        <span className="quiz-text">{arrayOfQuestions[currentQuestion].answer4}</span>
                     </label> <br />
                     <div>
                         <button onClick={() => this.findCorrectAnswer()} className="choose-button">Результат</button>
-                        <button onClick={() => this.handleAnswerOption(_isCorrect)} className="choose-button">Далее</button>
+                        <button onClick={() => this.handleAnswerOption(_chosenAnswer)} className="choose-button">Далее</button>
                     </div>
                     
-                    {isCorrectAnswerDisplayed ? <Answer isCorrect={_isCorrect} answer={rightAnswer} /> : null}
+                    {isCorrectAnswerDisplayed ? <Answer isCorrect={_chosenAnswer} answer={arrayOfQuestions[currentQuestion].correctAnswer} /> : null}
                     {isCorrectAnswerDisplayed = false}
                 </div>
             </div> 

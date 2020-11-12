@@ -5,6 +5,7 @@ import {score} from './SecondQuiz'
 
 class ShowScorePage extends React.Component {
     goOnMainPage = () => {
+        window.location.reload();
         ReactDOM.render(<Train />, document.getElementById('root'));
     }
     
