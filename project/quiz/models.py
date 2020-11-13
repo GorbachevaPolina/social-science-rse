@@ -16,6 +16,19 @@ class Theme(models.Model):
         return self.theme
 
 
+class Firquiz(models.Model):
+    topic = models.CharField('Тема', max_length=64, choices=TOPIC_CHOISES)
+    questionText = models.TextField('Вопрос')
+    answerText = models.CharField('Правильный вариант', max_length=64)
+
+    def __str__(self):
+        return self.questionText
+
+    class Meta:
+        verbose_name = 'Задание'
+        verbose_name_plural = 'Тренажер "Вставь слово"'
+
+
 class Secquiz(models.Model):
     topic = models.CharField('Тема', max_length=64, choices=TOPIC_CHOISES)
     questionText = models.TextField('Вопрос')
@@ -30,4 +43,16 @@ class Secquiz(models.Model):
 
     class Meta:
         verbose_name = 'Задание'
-        verbose_name_plural = 'Тренажер №2'
+        verbose_name_plural = 'Тренажер "Выбери правильный ответ"'
+
+class Thdquiz(models.Model):
+    topic = models.CharField('Тема', max_length=64, choices=TOPIC_CHOISES)
+    questionText = models.TextField('Утверждение')
+    isTrue = models.BooleanField('Правильно', default=False)
+
+    def __str__(self):
+        return self.questionText
+
+    class Meta:
+        verbose_name = 'Задание'
+        verbose_name_plural = 'Тренажер "Верю-не верю"'
