@@ -4,12 +4,12 @@ import ReactDOM from 'react-dom'
 import SecondQuiz from '../../Quiz2/SecondQuiz'
 import { id } from './Train'
 
-//const themes = [
-//    { theme: "Типы обществ", isChosen: false},
-//    { theme: "Налоги", isChosen: false},
-//    { theme: "Семья", isChosen: false},
-//    { theme: "Государство", isChosen: false}
-//];
+const themesToSend = [
+    { theme: "Типы обществ", isChosen: false},
+    { theme: "Налоги", isChosen: false},
+    { theme: "Семья", isChosen: false},
+    { theme: "Государство", isChosen: false}
+];
 
 const themes = [
     "Типы обществ",
@@ -64,7 +64,13 @@ class Themes extends React.Component {
 
     handleFormSubmit = formSubmitEvent => {
         formSubmitEvent.preventDefault();
-        Object.keys(this.state.checkboxes).filter(checkbox => this.state.checkboxes[checkbox]).forEach(checkbox => {console.log(checkbox, "is selected.");});
+        //Object.keys(this.state.checkboxes).filter(checkbox => this.state.checkboxes[checkbox]).forEach(checkbox => {console.log(checkbox, "is selected.");});
+        var keys = Object.keys(this.state.checkboxes);
+        for(var i = 0; i < 4; i++) {
+            themesToSend[i].isChosen = this.state.checkboxes[keys[i]];
+            //console.log(this.state.checkboxes[keys[i]])
+        }
+        //console.log(themesToSend)
         if(id == 2) {
             ReactDOM.render(<SecondQuiz />, document.getElementById('root'));
         }
