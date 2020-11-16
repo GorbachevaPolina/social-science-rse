@@ -9,11 +9,10 @@ TOPIC_CHOISES = [
 
 
 class Theme(models.Model):
-    theme = models.CharField('Тема', max_length=64, choices=TOPIC_CHOISES)
-    isChosen = models.BooleanField('Выбрана', default=False)
-
-    def __str__(self):
-        return self.theme
+    isChosen1 = models.BooleanField('Выбрана', default=False)
+    isChosen2 = models.BooleanField('Выбрана', default=False)
+    isChosen3 = models.BooleanField('Выбрана', default=False)
+    isChosen4 = models.BooleanField('Выбрана', default=False)
 
 
 class Firquiz(models.Model):

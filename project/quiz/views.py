@@ -7,11 +7,7 @@ from rest_framework.views import APIView
 
 
 class Quizlist(ListAPIView):
-    chosenThemes = Theme.objects.filter(isChosen=True).values_list('theme', flat=True)
-    queryset = Secquiz.objects.filter(topic=chosenThemes[0])
-    for i in range(1, len(chosenThemes)):
-        queryset |= Secquiz.objects.filter(topic=chosenThemes[i])
-    queryset = queryset.order_by('?')
+    queryset = Secquiz.objects.all()
     serializer_class = SecondQuizSerializer
 
 

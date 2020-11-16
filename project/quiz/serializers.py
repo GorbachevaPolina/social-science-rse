@@ -9,4 +9,4 @@ class SecondQuizSerializer(serializers.ModelSerializer):
 class ThemesSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Theme
-        fields = ("theme", 'isChosen')
+        fields = ('isChosen1', 'isChosen2', 'isChosen3', 'isChosen4')

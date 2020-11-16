@@ -4,12 +4,18 @@ import ReactDOM from 'react-dom'
 import SecondQuiz from '../../Quiz2/SecondQuiz'
 import { id } from './Train'
 
-const themesToSend = [
-    { theme: "Типы обществ", isChosen: false},
-    { theme: "Налоги", isChosen: false},
-    { theme: "Семья", isChosen: false},
-    { theme: "Государство", isChosen: false}
-];
+/*const themesToSend = [
+    { theme: "soc", isChosen: false},
+    { theme: "tax", isChosen: false},
+    { theme: "fam", isChosen: false},
+    { theme: "state", isChosen: false}
+];*/
+const themesToSend = {
+    isChosen1: false,
+    isChosen2: false,
+    isChosen3: false,
+    isChosen4: false
+}
 
 const themes = [
     "Типы обществ",
@@ -18,12 +24,7 @@ const themes = [
     "Государство"
 ];
 
-var arrayOfQuestions;
-(async () => {
-    var response = await fetch("http://127.0.0.1:8000/api/secondquiz/?format=json");
-    arrayOfQuestions = await response.json();
-    console.log(arrayOfQuestions);
-})();
+export var arrayOfQuestions;
 
 class Themes extends React.Component {
     
@@ -66,14 +67,47 @@ class Themes extends React.Component {
         formSubmitEvent.preventDefault();
         //Object.keys(this.state.checkboxes).filter(checkbox => this.state.checkboxes[checkbox]).forEach(checkbox => {console.log(checkbox, "is selected.");});
         var keys = Object.keys(this.state.checkboxes);
-        for(var i = 0; i < 4; i++) {
+        /*for(var i = 0; i < 4; i++) {
             themesToSend[i].isChosen = this.state.checkboxes[keys[i]];
             //console.log(this.state.checkboxes[keys[i]])
-        }
+        }*/
+        themesToSend.isChosen1 = this.state.checkboxes[keys[0]];
+        themesToSend.isChosen2 = this.state.checkboxes[keys[1]];
+        themesToSend.isChosen3 = this.state.checkboxes[keys[2]];
+        themesToSend.isChosen4 = this.state.checkboxes[keys[3]];
+        
+
+        (async () => {
+            var response = await fetch('http://127.0.0.1:8000/api/themes/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json;charset=utf-8'
+                },
+                body: JSON.stringify(themesToSend)
+            });
+            const json = await response.json();
+        })();
+        
+        console.log(JSON.stringify(themesToSend));
+        async function getArray() {
+            var response = await fetch("http://127.0.0.1:8000/api/secondquiz/?format=json");
+            arrayOfQuestions = await response.json();
+            return arrayOfQuestions;
+        };
+
+        (async () => {
+            console.log(await getArray());
+            if(id == 2) {
+                ReactDOM.render(<SecondQuiz />, document.getElementById('root'));
+            }
+        })()
+
+        /*
+        getArray().then(arrayOfQuestions => console.log(arrayOfQuestions)); */
+
+        //console.log(arrayOfQuestions);
         //console.log(themesToSend)
-        if(id == 2) {
-            ReactDOM.render(<SecondQuiz />, document.getElementById('root'));
-        }
+        
     };
 
     createCheckbox = option => (
@@ -125,4 +159,4 @@ class Themes extends React.Component {
 }
 
 export default Themes;
-export {arrayOfQuestions};
+//export {arrayOfQuestions};
