@@ -9,10 +9,10 @@ TOPIC_CHOISES = [
 
 
 class Theme(models.Model):
-    isChosen1 = models.BooleanField('Выбрана', default=False)
-    isChosen2 = models.BooleanField('Выбрана', default=False)
-    isChosen3 = models.BooleanField('Выбрана', default=False)
-    isChosen4 = models.BooleanField('Выбрана', default=False)
+    isChosen1 = models.BooleanField('Выбрана тема "Типы обществ"', default=False)
+    isChosen2 = models.BooleanField('Выбрана тема "Налоги"', default=False)
+    isChosen3 = models.BooleanField('Выбрана тема "Семья"', default=False)
+    isChosen4 = models.BooleanField('Выбрана тема "Государство"', default=False)
 
 
 class Firquiz(models.Model):
