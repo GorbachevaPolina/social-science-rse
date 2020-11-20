@@ -98,14 +98,19 @@ class Themes extends React.Component {
                     'Content-Type': 'application/json;charset=utf-8'
                 },
                 body: JSON.stringify(themesToSend)
-            });
+            }).then((response) => {return response.json()});
             const json = await response.json();
-            window.location.reload();
+
         })();
         
         //console.log(JSON.stringify(themesToSend));
         async function getArray() {
-            var response = await fetch("http://127.0.0.1:8000/api/secondquiz/?format=json");
+            if (id  == 2) {
+                var response = await fetch("http://127.0.0.1:8000/api/secondquiz/?format=json");
+            }
+            if (id  == 3) {
+                var response = await fetch("http://127.0.0.1:8000/api/thirdquiz/?format=json");
+            }
             arrayOfQuestions = await response.json();
             return arrayOfQuestions;
         };
@@ -113,6 +118,7 @@ class Themes extends React.Component {
         (async () => {
             console.log(await getArray());
             if(id == 2) {
+                this.forceUpdate();
                 ReactDOM.render(<SecondQuiz />, document.getElementById('root'));
             }
             if(id==3) {

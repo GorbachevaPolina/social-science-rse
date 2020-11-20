@@ -47,7 +47,9 @@ class Secquiz(models.Model):
 class Thdquiz(models.Model):
     topic = models.CharField('Тема', max_length=64, choices=TOPIC_CHOISES)
     questionText = models.TextField('Утверждение')
-    isTrue = models.BooleanField('Правильно', default=False)
+    option1 = models.CharField('Вариант 1', max_length=64)
+    option2 = models.CharField('Вариант 2', max_length=64)
+    answerText = models.CharField('Правильный вариант', max_length=64)
 
     def __str__(self):
         return self.questionText

@@ -23,4 +23,4 @@ class SecondQuizSerializer(serializers.ModelSerializer):
 class ThirdQuizSerializer(serializers.ModelSerializer):
     class Meta:
         model = Thdquiz
-        fields = ('questionText', 'isTrue')
+        fields = ('questionText', 'option1', 'option2', 'answerText')
