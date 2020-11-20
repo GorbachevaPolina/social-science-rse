@@ -1,8 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import Train from './../MainPage/Themes/Train'
-import {score} from './SecondQuiz'
-import {numberOfQuestions} from './SecondQuiz'
+import {score} from './ThirdQuiz'
+import {numberOfQuestions} from './ThirdQuiz'
 
 class ShowScorePage extends React.Component {
     goOnMainPage = () => {

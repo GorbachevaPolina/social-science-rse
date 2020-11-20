@@ -4,13 +4,15 @@ import ReactDOM from 'react-dom'
 import ShowScorePage from './ShowScorePage'
 import {arrayOfQuestions} from './../MainPage/Themes/Themes'
 
+
 var _chosenAnswer= '';
 var currentQuestion = 0;
 var score = 0;
 var isCorrectAnswerDisplayed = false;
-var numberOfQuestions = 0;  //arrayOfQuestions.length();
-
-class SecondQuiz extends React.Component {
+var numberOfQuestions = 0; //arrayOfQuestions.length();
+//console.log(arrayOfQuestions);
+class ThirdQuiz extends React.Component {
+    //numberOfQuestions = arrayOfQuestions.length;
     handleAnswerOption(chosenAnswer) {
         if (chosenAnswer == arrayOfQuestions[currentQuestion].answerText) {
             score += 1;
@@ -20,7 +22,7 @@ class SecondQuiz extends React.Component {
             currentQuestion = nextQuestion;
         } else {
             numberOfQuestions = arrayOfQuestions.length;
-            ReactDOM.render(<ShowScorePage />, document.getElementById('root'));
+            ReactDOM.render(<ShowScorePage score={score}/>, document.getElementById('root'));
         }
         var obj = document.getElementsByName("x");
         for(let i=0; i<obj.length; ++i)
@@ -42,6 +44,7 @@ class SecondQuiz extends React.Component {
             <div className="quiz-card">
                 <div className="question">
                 <span className="quiz-text">{arrayOfQuestions[currentQuestion].questionText}</span>
+                {/*console.log(arrayOfQuestions)*/}
                 </div>
                 <div className="answers"> 
                     <label>
@@ -51,14 +54,6 @@ class SecondQuiz extends React.Component {
                     <label>
                         <input type="radio" onClick={() => this.setOption(arrayOfQuestions[currentQuestion].option2)} name="x"/>
                         <span className="quiz-text">{arrayOfQuestions[currentQuestion].option2}</span>
-                    </label> <br />
-                    <label>
-                        <input type="radio" onClick={() => this.setOption(arrayOfQuestions[currentQuestion].option3)} name="x"/>
-                        <span className="quiz-text">{arrayOfQuestions[currentQuestion].option3}</span>
-                    </label> <br />
-                    <label>
-                        <input type="radio" onClick={() => this.setOption(arrayOfQuestions[currentQuestion].option4)} name="x"/>
-                        <span className="quiz-text">{arrayOfQuestions[currentQuestion].option4}</span>
                     </label> <br />
                     <div>
                         <button onClick={() => this.findCorrectAnswer()} className="choose-button">Результат</button>
@@ -75,6 +70,6 @@ class SecondQuiz extends React.Component {
     }
 }
 
-export default SecondQuiz;
+export default ThirdQuiz;
 export {score}
 export {numberOfQuestions}

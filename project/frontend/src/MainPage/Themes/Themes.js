@@ -2,6 +2,7 @@ import React from 'react'
 import ThemesItems from './ThemesItems'
 import ReactDOM from 'react-dom'
 import SecondQuiz from '../../Quiz2/SecondQuiz'
+import ThirdQuiz from '../../Quiz3/ThirdQuiz'
 import { id } from './Train'
 
 /*const themesToSend = [
@@ -24,7 +25,20 @@ const themes = [
     "Государство"
 ];
 
-export var arrayOfQuestions;
+export var arrayOfQuestions; /*= [
+    {
+        questionText: "Первый вопрос",
+        option1: "Да",
+        option2: "Нет",
+        answerText: "Да"
+    },
+    {
+        questionText: "Второй вопрос",
+        option1: "первый вариант",
+        option2: "второй вариант",
+        answerText: "второй вариант"
+    }
+];*/
 
 class Themes extends React.Component {
     
@@ -86,9 +100,10 @@ class Themes extends React.Component {
                 body: JSON.stringify(themesToSend)
             });
             const json = await response.json();
+            window.location.reload();
         })();
         
-        console.log(JSON.stringify(themesToSend));
+        //console.log(JSON.stringify(themesToSend));
         async function getArray() {
             var response = await fetch("http://127.0.0.1:8000/api/secondquiz/?format=json");
             arrayOfQuestions = await response.json();
@@ -100,8 +115,16 @@ class Themes extends React.Component {
             if(id == 2) {
                 ReactDOM.render(<SecondQuiz />, document.getElementById('root'));
             }
+            if(id==3) {
+                ReactDOM.render(<ThirdQuiz />, document.getElementById('root'));
+            }
         })()
-
+        /*if(id == 2) {
+            ReactDOM.render(<SecondQuiz />, document.getElementById('root'));
+        }
+        if(id==3) {
+            ReactDOM.render(<ThirdQuiz />, document.getElementById('root'));
+        }*/
         /*
         getArray().then(arrayOfQuestions => console.log(arrayOfQuestions)); */
 
