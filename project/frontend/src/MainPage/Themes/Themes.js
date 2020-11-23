@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom'
 import SecondQuiz from '../../Quiz2/SecondQuiz'
 import ThirdQuiz from '../../Quiz3/ThirdQuiz'
 import { id } from './Train'
+import axios from 'axios'
 
 /*const themesToSend = [
     { theme: "soc", isChosen: false},
@@ -91,20 +92,30 @@ class Themes extends React.Component {
         themesToSend.isChosen4 = this.state.checkboxes[keys[3]];
         
 
-        (async () => {
+        /*(async () => {
             var response = await fetch('http://127.0.0.1:8000/api/themes/', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json;charset=utf-8'
                 },
                 body: JSON.stringify(themesToSend)
-            }).then((response) => {return response.json()});
+            }).then(function(response) {
+                return response.json()
+              }).then(function(body) {
+                console.log(body);
+              });;
             const json = await response.json();
-
         })();
+        /*function sendThemes() {
+            return axios.post('http://127.0.0.1:8000/api/themes/', themesToSend);
+        }
+        sendThemes();*/
         
         //console.log(JSON.stringify(themesToSend));
         async function getArray() {
+            axios.post('http://127.0.0.1:8000/api/themes/', themesToSend);
+            var resp = await axios.get('http://127.0.0.1:8000/api/themes/');
+            console.log(resp);
             if (id  == 2) {
                 var response = await fetch("http://127.0.0.1:8000/api/secondquiz/?format=json");
             }
@@ -118,7 +129,6 @@ class Themes extends React.Component {
         (async () => {
             console.log(await getArray());
             if(id == 2) {
-                this.forceUpdate();
                 ReactDOM.render(<SecondQuiz />, document.getElementById('root'));
             }
             if(id==3) {
