@@ -97,6 +97,7 @@ class Themes extends React.Component {
                 ReactDOM.render(<ThirdQuiz />, document.getElementById('root'));
             }
         })()
+
     };
 
     createCheckbox = option => (

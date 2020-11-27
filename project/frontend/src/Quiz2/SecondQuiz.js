@@ -60,7 +60,7 @@ class SecondQuiz extends React.Component {
                         <input type="radio" onClick={() => this.setOption(arrayOfQuestions[currentQuestion].option4)} name="x"/>
                         <span className="quiz-text">{arrayOfQuestions[currentQuestion].option4}</span>
                     </label> <br />
-                    <div>
+                    <div className="quiz-buttons">
                         <button onClick={() => this.findCorrectAnswer()} className="choose-button">Результат</button>
                         <button onClick={() => this.handleAnswerOption(_chosenAnswer)} className="choose-button">Далее</button>
                     </div>

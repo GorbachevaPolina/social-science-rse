@@ -46,7 +46,7 @@ class FirstQuiz extends React.Component {
                 </div>
                 <div className="answers"> 
                     <input id="answerInput"></input>
-                    <div>
+                    <div className="quiz-buttons">
                         {/*this.setOption()*/}
                         <button onClick={() => this.findCorrectAnswer()} className="choose-button">Результат</button>
                         <button onClick={() => this.handleAnswerOption()} className="choose-button">Далее</button>
