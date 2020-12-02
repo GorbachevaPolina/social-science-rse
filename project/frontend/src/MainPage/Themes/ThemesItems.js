@@ -4,6 +4,7 @@ const styles = {
     input: {
         //margin: 'auto'
     }
+    
 }
 
 function ThemesItems({label, isSelected, onCheckboxChange}) {
@@ -19,6 +20,10 @@ function ThemesItems({label, isSelected, onCheckboxChange}) {
                 />
                 <span className="theme">{label}</span>
             </label>
+            
+            <button className="theory-button">
+                <img src="../../../static/books.png" className="theory-image"></img>
+            </button>
         </div>
     )
 }

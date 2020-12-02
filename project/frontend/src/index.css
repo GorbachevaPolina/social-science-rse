@@ -109,6 +109,15 @@ body {
     margin-bottom: 30px;
 }
 
+.theory-button {
+    background: none;
+    border: none;
+}
+
+.theory-image {
+    width: 35px !important;
+}
+
 .button-go {
     width: auto;
     background: #919e5c;
