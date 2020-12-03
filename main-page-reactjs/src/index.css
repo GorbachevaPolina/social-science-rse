@@ -96,17 +96,6 @@ body {
     color: gray;
 }
 
-.point-and-theme {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: auto;
-}
-
-.point-and-theme:last-of-type {
-    margin-bottom: 30px;
-}
-
 .button-go {
     width: auto;
     background: #5ebde5;

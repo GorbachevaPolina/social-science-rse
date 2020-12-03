@@ -1,6 +1,8 @@
 import React from 'react'
 import Themes from './Themes'
 //import ThemesItems from './ThemesItems'
+import ChooseTheory from '../../Theory/ChooseTheory'
+import ReactDOM from 'react-dom'
 
 const style = {
     div: {
@@ -25,6 +27,10 @@ class Train extends React.Component{
         //console.log(id);
     }
 
+    renderTheory() {
+        ReactDOM.render(<ChooseTheory />, document.getElementById('root'));
+    }
+
     render() {
         return (
             <div>
@@ -46,6 +52,9 @@ class Train extends React.Component{
                 </div>
             </div>
             {this.state.isDisplayed ? <Themes /> : null}
+            <button className="button-go" onClick={() => this.renderTheory()}>
+                <span className="button-go-text">Теория</span>
+            </button>
             {/*console.log(id)*/}
             </div>
         );

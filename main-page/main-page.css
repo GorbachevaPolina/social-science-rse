@@ -111,16 +111,6 @@ body {
     outline: none;
 }
 
-.point-and-theme {
-    display: flex;
-    align-items: center;
-    margin: auto;
-}
-
-.point-and-theme:last-of-type {
-    margin-bottom: 30px;
-}
-
 .button-go {
     width: 10%;
     background: #5ebde5;
@@ -151,15 +141,8 @@ body {
     border-radius: 10px;
     color: white;
     margin: 10px;
-<<<<<<< HEAD
-
 }
 
-=======
-
-}
-
->>>>>>> 848ed0b42fd93c25b7c2c8e38bd23ad3813e8ef0
 .choose-button:focus {
     outline: none;
 }

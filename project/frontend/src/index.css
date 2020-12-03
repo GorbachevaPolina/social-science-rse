@@ -157,6 +157,10 @@ body {
     outline: none;
 }
 
+.choose-button:active {
+    box-shadow: 0 0 10px white inset;
+}
+
 .button-go-text {
     color: white;
     font-size: 24px;
@@ -185,6 +189,28 @@ body {
     background: #fafeff;
     /* border-radius: 32px; */
     width: 20%;
+}
+
+.theory-card {
+    margin: auto;
+    width: fit-content;
+    padding: 28px;
+    box-shadow: 0 0 10px #919e5c;
+    background: #fafeff;
+    /* border-radius: 32px; */
+    width: 90%;
+}
+
+.theory-table {
+    border-collapse: collapse;
+}
+
+.choose-theory-buttons {
+    display: grid;
+}
+
+.theory-button {
+    margin: auto;
 }
 
 .quiz-text {
