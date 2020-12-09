@@ -13,12 +13,10 @@ class FirstQuizSerializer(serializers.ModelSerializer):
         model = Firquiz
         fields = ('questionText', 'answerText')
 
-
 class SecondQuizSerializer(serializers.ModelSerializer):
     class Meta:
         model = Secquiz
         fields = ('questionText', 'option1', 'option2', 'option3', 'option4', 'answerText')
-
 
 class ThirdQuizSerializer(serializers.ModelSerializer):
     class Meta:

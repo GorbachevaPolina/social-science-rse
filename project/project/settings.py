@@ -1,5 +1,6 @@
 from pathlib import Path
 import os
+import django_heroku
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -12,7 +13,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '7j$7)+j9f#z8$u64n@gapk06sbv_uuubiqra7hjq7cl---eqth'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -117,3 +118,4 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'frontend', 'build', 'static'),
     os.path.join(BASE_DIR, 'frontend', 'public', 'static'),
 ]
+django_heroku.settings(locals())
